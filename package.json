@@ -1,7 +1,7 @@
 {
-  "name": "molezinha-medner",
+  "name": "finance-manager-pro",
   "version": "1.0.0",
-  "description": "",
+  "description": "A financial management app using SOLID principles, TDD, and Clean Code.",
   "main": "index.js",
   "type": "module",
   "scripts": {
