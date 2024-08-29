@@ -1,7 +1,7 @@
 {
   "name": "finance-manager-pro",
   "version": "1.0.0",
-  "description": "A financial management app using SOLID principles, TDD, and Clean Code like MVC architecture.",
+  "description": "The financial management app using SOLID principles, TDD, and Clean Code practices, following the MVC architecture.",
   "main": "index.js",
   "type": "module",
   "scripts": {
