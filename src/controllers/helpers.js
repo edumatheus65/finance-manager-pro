@@ -19,3 +19,10 @@ export const serverError = () => ({
     message: "Internal Server Error",
   },
 });
+
+export const notFound = () => ({
+  statusCode: 404,
+  body: {
+    message: "Not Found",
+  },
+});
