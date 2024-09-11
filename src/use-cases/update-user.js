@@ -3,7 +3,7 @@ import { PostgresGetUserByEmailRepository } from "../repositories/postgres/get-u
 import bcrypt from "bcrypt";
 import { PostgresUpdateUserRepository } from "../repositories/postgres/update-user-by";
 
-export class UpdateUseUseCase {
+export class UpdateUserUseCase {
   async execute(userId, updateParams) {
     //1. Se o email estiver sendo atualizado, verificar se ele já está em uso
 
