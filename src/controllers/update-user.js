@@ -1,7 +1,14 @@
 import validator from "validator";
-import { badRequest, serverError, successfulRequest } from "./helpers.js";
+import { badRequest, serverError, successfulRequest } from "./helpers/http.js";
 import { UpdateUserUseCase } from "../use-cases/update-user.js";
 import { EmailAlreadyInUseError } from "../erros/user.js";
+import {
+  checkIfEmailValid,
+  checkPasswordIfValid,
+  emailIsAlreadyInUseResponse,
+  invalidIdResponse,
+  invalidPasswordResponse,
+} from "./helpers/user.js";
 
 export class UpdateUserController {
   async execute(httpRequest) {
@@ -11,16 +18,14 @@ export class UpdateUserController {
       const isIdValid = validator.isUUID(userId);
 
       if (!isIdValid) {
-        return badRequest({
-          errorMessage: "The provided ID is not valid",
-        });
+        return invalidIdResponse();
       }
 
-      const updateUserParams = httpRequest.body;
+      const params = httpRequest.body;
 
       const allowedFields = ["first_name", "last_name", "email", "password"];
 
-      const someFieldsIsNotAllowed = Object.keys(updateUserParams).some(
+      const someFieldsIsNotAllowed = Object.keys(params).some(
         (field) => !allowedFields.includes(field)
       );
 
@@ -30,32 +35,25 @@ export class UpdateUserController {
         });
       }
 
-      if (updateUserParams.password) {
-        const passwordIsNotValid = updateUserParams.password.length < 6;
+      if (params.password) {
+        const passwordIsValid = checkPasswordIfValid(params.password);
 
-        if (passwordIsNotValid) {
-          return badRequest({
-            errorMessage: "Password must be at least 6 characters",
-          });
+        if (!passwordIsValid) {
+          return invalidPasswordResponse();
         }
       }
 
-      if (updateUserParams.email) {
-        const emailIsValid = validator.isEmail(updateUserParams.email);
+      if (params.email) {
+        const emailIsValid = checkIfEmailValid(params.email);
 
         if (!emailIsValid) {
-          return badRequest({
-            errorMessage: "Invalid e-mail. Please provide a valid one!",
-          });
+          return emailIsAlreadyInUseResponse();
         }
       }
 
       const updateUserCase = new UpdateUserUseCase();
 
-      const updatedUser = await updateUserCase.execute(
-        userId,
-        updateUserParams
-      );
+      const updatedUser = await updateUserCase.execute(userId, params);
 
       return successfulRequest(updatedUser);
     } catch (error) {
