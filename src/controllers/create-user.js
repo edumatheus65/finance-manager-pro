@@ -1,19 +1,20 @@
 import { CreateUserUseCase } from "../use-cases/create-user.js";
-import { badRequest, created, serverError } from "./helpers/http.js";
 import { EmailAlreadyInUseError } from "../erros/user.js";
 import {
   checkIfEmailValid,
   checkPasswordIfValid,
   emailIsAlreadyInUseResponse,
   invalidPasswordResponse,
-} from "./helpers/user.js";
+  badRequest,
+  created,
+  serverError,
+} from "./helpers/index.js";
 
 export class CreateUserController {
   async execute(httpRequest) {
     try {
       const params = httpRequest.body;
 
-      // validar a requisição (campos obrigatórios, tamanho de senha e email)
       const requiredFields = ["first_name", "last_name", "email", "password"];
 
       for (const field of requiredFields) {
@@ -22,7 +23,7 @@ export class CreateUserController {
         }
       }
 
-      const passwordIsValid = checkPasswordIfValid();
+      const passwordIsValid = checkPasswordIfValid(params.password);
 
       if (!passwordIsValid) {
         return invalidPasswordResponse();
