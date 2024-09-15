@@ -6,6 +6,18 @@ import {
   UpdateUserController,
   DeleteUserController,
 } from "./src/controllers/index.js";
+import {
+  PostgresGetUserByIdRepository,
+  PostgresCreateUserRepository,
+  PostgresUpdateUserRepository,
+  PostgresDeleteUserRepository,
+} from "./src/repositories/postgres/index.js";
+import {
+  GetUserByIdUseCase,
+  CreateUserUseCase,
+  UpdateUserUseCase,
+  DeleteUserUseCase,
+} from "./src/use-cases/index.js";
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -13,7 +25,9 @@ const port = process.env.PORT || 3000;
 app.use(express.json());
 
 app.post("/api/users", async (req, res) => {
-  const createUserController = new CreateUserController();
+  const postgresCreateUserRepository = new PostgresCreateUserRepository();
+  const createUserUseCase = new CreateUserUseCase(postgresCreateUserRepository);
+  const createUserController = new CreateUserController(createUserUseCase);
 
   const { statusCode, body } = await createUserController.execute(req);
 
@@ -21,7 +35,9 @@ app.post("/api/users", async (req, res) => {
 });
 
 app.patch("/api/users/:userId", async (req, res) => {
-  const updateUserController = new UpdateUserController();
+  const postgresUpdateUserRepository = new PostgresUpdateUserRepository();
+  const updateUserUseCase = new UpdateUserUseCase(postgresUpdateUserRepository);
+  const updateUserController = new UpdateUserController(updateUserUseCase);
 
   const { statusCode, body } = await updateUserController.execute(req);
 
@@ -29,7 +45,9 @@ app.patch("/api/users/:userId", async (req, res) => {
 });
 
 app.get("/api/users/:userId", async (req, res) => {
-  const getUserByIdController = new GetUserByIdController();
+  const getUserByIdRepository = new PostgresGetUserByIdRepository();
+  const getUserByIdUseCase = new GetUserByIdUseCase(getUserByIdRepository);
+  const getUserByIdController = new GetUserByIdController(getUserByIdUseCase);
 
   const { statusCode, body } = await getUserByIdController.execute(req);
 
@@ -37,7 +55,9 @@ app.get("/api/users/:userId", async (req, res) => {
 });
 
 app.delete("/api/users/:userId", async (req, res) => {
-  const deleteUserController = new DeleteUserController();
+  const postgresDeleteUserRepository = new PostgresDeleteUserRepository();
+  const deleteUserUseCase = new DeleteUserUseCase(postgresDeleteUserRepository);
+  const deleteUserController = new DeleteUserController(deleteUserUseCase);
 
   const { statusCode, body } = await deleteUserController.execute(req);
 
