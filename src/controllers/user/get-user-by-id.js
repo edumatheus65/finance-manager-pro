@@ -4,7 +4,7 @@ import {
   notFound,
   serverError,
   successfulRequest,
-} from "./helpers/index.js";
+} from "../helpers/index.js";
 
 export class GetUserByIdController {
   constructor(getUserByIdUseCase) {

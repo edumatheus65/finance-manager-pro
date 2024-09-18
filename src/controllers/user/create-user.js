@@ -1,4 +1,4 @@
-import { EmailAlreadyInUseError } from "../erros/user.js";
+import { EmailAlreadyInUseError } from "../../erros/user.js";
 import {
   checkIfEmailValid,
   checkPasswordIfValid,
@@ -7,7 +7,7 @@ import {
   badRequest,
   created,
   serverError,
-} from "./helpers/index.js";
+} from "../helpers/index.js";
 
 export class CreateUserController {
   constructor(createUserUseCase) {
