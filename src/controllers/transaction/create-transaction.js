@@ -15,15 +15,15 @@ export class CreateTransactionController {
     try {
       const params = httpRequest.body;
 
-      const requiredFields = ["id", "userId", "name", "date", "amount", "type"];
+      const requiredFields = ["name", "user_id", "date", "amount", "type"];
 
       for (const field of requiredFields) {
-        if (!params[field] || params[field].trim().length === 0) {
+        if (!params[field] || params[field].toString().trim().length === 0) {
           return badRequest({ message: `Missing param: ${field}` });
         }
       }
 
-      const userIdIsValid = checkIfIdValid(params.userId);
+      const userIdIsValid = checkIfIdValid(params.user_id);
 
       if (!userIdIsValid) {
         invalidIdResponse();
@@ -48,12 +48,14 @@ export class CreateTransactionController {
       const typeIsValid = ["EARNING", "EXPENSE", "INVESTMENT"].includes(type);
 
       if (!typeIsValid) {
-        return badRequest({ message: "The type must be a valid currency" });
+        return badRequest({
+          message: "The type must be EARNING, EXPENSE, INVESTMENT",
+        });
       }
 
       const transaction = await this.createTransactionUseCase.execute({
         ...params,
-        amount: amountIsValid,
+        amount: params.amount,
         type: type,
       });
 
