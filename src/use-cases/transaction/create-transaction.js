@@ -1,4 +1,4 @@
-import { UserNotFoundError } from "../../erros/user";
+import { UserNotFoundError } from "../../erros/user.js";
 import { v4 as uuidv4 } from "uuid";
 
 export class CreateTransactionUseCase {
