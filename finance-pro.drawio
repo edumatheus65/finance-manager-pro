@@ -1,53 +1,65 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126.0.0.0 Safari/537.36" version="24.7.14">
-  <diagram name="Page-1" id="Yp_AWAappqsAeuG2aCL4">
+  <diagram name="Transaction" id="Yp_AWAappqsAeuG2aCL4">
     <mxGraphModel dx="954" dy="606" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="DFOC8xpNxNVJtCkwnlAc-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="DFOC8xpNxNVJtCkwnlAc-1" target="DFOC8xpNxNVJtCkwnlAc-2">
+        <mxCell id="DFOC8xpNxNVJtCkwnlAc-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="DFOC8xpNxNVJtCkwnlAc-1" target="DFOC8xpNxNVJtCkwnlAc-2" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="DFOC8xpNxNVJtCkwnlAc-1" value="Post&lt;div&gt;/transactions&lt;/div&gt;" style="shape=step;perimeter=stepPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="1">
+        <mxCell id="DFOC8xpNxNVJtCkwnlAc-1" value="Post&lt;div&gt;/transactions&lt;/div&gt;" style="shape=step;perimeter=stepPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" parent="1" vertex="1">
           <mxGeometry x="80" y="40" width="120" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="DFOC8xpNxNVJtCkwnlAc-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="DFOC8xpNxNVJtCkwnlAc-2" target="DFOC8xpNxNVJtCkwnlAc-4">
+        <mxCell id="DFOC8xpNxNVJtCkwnlAc-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="DFOC8xpNxNVJtCkwnlAc-2" target="DFOC8xpNxNVJtCkwnlAc-4" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="DFOC8xpNxNVJtCkwnlAc-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="DFOC8xpNxNVJtCkwnlAc-2" target="DFOC8xpNxNVJtCkwnlAc-8">
+        <mxCell id="DFOC8xpNxNVJtCkwnlAc-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="DFOC8xpNxNVJtCkwnlAc-2" target="DFOC8xpNxNVJtCkwnlAc-8" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="DFOC8xpNxNVJtCkwnlAc-2" value="Create Transaction Controller" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="DFOC8xpNxNVJtCkwnlAc-2" value="Create Transaction Controller" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="240" y="50" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="DFOC8xpNxNVJtCkwnlAc-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="DFOC8xpNxNVJtCkwnlAc-4" target="DFOC8xpNxNVJtCkwnlAc-6">
+        <mxCell id="DFOC8xpNxNVJtCkwnlAc-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="DFOC8xpNxNVJtCkwnlAc-4" target="DFOC8xpNxNVJtCkwnlAc-6" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="DFOC8xpNxNVJtCkwnlAc-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="DFOC8xpNxNVJtCkwnlAc-4" target="DFOC8xpNxNVJtCkwnlAc-14">
+        <mxCell id="DFOC8xpNxNVJtCkwnlAc-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="DFOC8xpNxNVJtCkwnlAc-4" target="DFOC8xpNxNVJtCkwnlAc-14" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="DFOC8xpNxNVJtCkwnlAc-4" value="Create Transaction Use Case" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="DFOC8xpNxNVJtCkwnlAc-4" value="Create Transaction Use Case" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="410" y="50" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="DFOC8xpNxNVJtCkwnlAc-6" value="Create Transaction Repository" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="DFOC8xpNxNVJtCkwnlAc-6" value="Create Transaction Repository" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="590" y="50" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="DFOC8xpNxNVJtCkwnlAc-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="DFOC8xpNxNVJtCkwnlAc-8" target="DFOC8xpNxNVJtCkwnlAc-10">
+        <mxCell id="DFOC8xpNxNVJtCkwnlAc-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="DFOC8xpNxNVJtCkwnlAc-8" target="DFOC8xpNxNVJtCkwnlAc-10" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="DFOC8xpNxNVJtCkwnlAc-8" value="Validar se ID do usuário é valido" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="DFOC8xpNxNVJtCkwnlAc-8" value="Validar se ID do usuário é valido" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="240" y="140" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="DFOC8xpNxNVJtCkwnlAc-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="DFOC8xpNxNVJtCkwnlAc-10" target="DFOC8xpNxNVJtCkwnlAc-12">
+        <mxCell id="DFOC8xpNxNVJtCkwnlAc-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="DFOC8xpNxNVJtCkwnlAc-10" target="DFOC8xpNxNVJtCkwnlAc-12" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="DFOC8xpNxNVJtCkwnlAc-10" value="Validar se o amount é maior que 0 e verificar se tem duas casas decimais" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="DFOC8xpNxNVJtCkwnlAc-10" value="Validar se o amount é maior que 0 e verificar se tem duas casas decimais" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="240" y="240" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="DFOC8xpNxNVJtCkwnlAc-12" value="Vetificar se o transaction é valido" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="dbyppPkA6AeiLpqPN0w3-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="DFOC8xpNxNVJtCkwnlAc-12" target="dbyppPkA6AeiLpqPN0w3-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="DFOC8xpNxNVJtCkwnlAc-12" value="Vetificar se o transaction é valido" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="240" y="330" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="DFOC8xpNxNVJtCkwnlAc-14" value="Validar se o usuário recebido existe" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="dbyppPkA6AeiLpqPN0w3-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="DFOC8xpNxNVJtCkwnlAc-14" target="dbyppPkA6AeiLpqPN0w3-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="DFOC8xpNxNVJtCkwnlAc-14" value="Validar se o usuário recebido existe" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="410" y="140" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="dbyppPkA6AeiLpqPN0w3-1" value="Criar um id para transaction" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="410" y="240" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="dbyppPkA6AeiLpqPN0w3-3" value="Validar campos obrigatórios&lt;div&gt;id,&amp;nbsp;&lt;span style=&quot;background-color: initial;&quot;&gt;userId,&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;name, date, amount, type&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="240" y="430" width="120" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
