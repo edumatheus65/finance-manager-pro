@@ -1,6 +1,6 @@
 import { UserNotFoundError } from "../../erros/user";
 
-export class getTransactionsByUserIdUseCase {
+export class GetTransactionsByUserIdUseCase {
   constructor(
     PostgresGetUserByIdRepository,
     PostgresgetTransactionsByUserIdRepository
