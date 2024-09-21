@@ -3,11 +3,11 @@ import { UserNotFoundError } from "../../erros/user";
 export class GetTransactionsByUserIdUseCase {
   constructor(
     PostgresGetUserByIdRepository,
-    PostgresgetTransactionsByUserIdRepository
+    PostgresgetGetTransactionsByUserIdRepository
   ) {
     this.PostgresGetUserByIdRepository = PostgresGetUserByIdRepository;
-    this.PostgresgetTransactionsByUserIdRepository =
-      PostgresgetTransactionsByUserIdRepository;
+    this.PostgresgetGetTransactionsByUserIdRepository =
+      PostgresgetGetTransactionsByUserIdRepository;
   }
   async execute(params) {
     const user = await this.PostgresGetUserByIdRepository.execute(
@@ -18,9 +18,8 @@ export class GetTransactionsByUserIdUseCase {
       throw new UserNotFoundError(params.user_id);
     }
 
-    const transaction = this.PostgresgetTransactionsByUserIdRepository.execute(
-      params.user_id
-    );
+    const transaction =
+      this.PostgresgetGetTransactionsByUserIdRepository.execute(params.user_id);
 
     return transaction;
   }
