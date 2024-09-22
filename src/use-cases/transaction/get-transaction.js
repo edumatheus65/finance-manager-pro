@@ -1,16 +1,16 @@
-import { UserNotFoundError } from "../../erros/user";
+import { UserNotFoundError } from "../../erros/user.js";
 
 export class GetTransactionsByUserIdUseCase {
   constructor(
-    PostgresGetUserByIdRepository,
-    PostgresgetGetTransactionsByUserIdRepository
+    postgresGetUserByIdRepository,
+    postgresgetGetTransactionsByUserIdRepository
   ) {
-    this.PostgresGetUserByIdRepository = PostgresGetUserByIdRepository;
-    this.PostgresgetGetTransactionsByUserIdRepository =
-      PostgresgetGetTransactionsByUserIdRepository;
+    this.postgresGetUserByIdRepository = postgresGetUserByIdRepository;
+    this.postgresgetGetTransactionsByUserIdRepository =
+      postgresgetGetTransactionsByUserIdRepository;
   }
   async execute(params) {
-    const user = await this.PostgresGetUserByIdRepository.execute(
+    const user = await this.postgresGetUserByIdRepository.execute(
       params.userId
     );
 
@@ -19,7 +19,7 @@ export class GetTransactionsByUserIdUseCase {
     }
 
     const transaction =
-      this.PostgresgetGetTransactionsByUserIdRepository.execute(params.userId);
+      this.postgresgetGetTransactionsByUserIdRepository.execute(params.userId);
 
     return transaction;
   }
