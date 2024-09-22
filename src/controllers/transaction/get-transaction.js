@@ -1,3 +1,4 @@
+import { UserNotFoundError } from "../../erros/user.js";
 import {
   checkIfIdValid,
   invalidIdResponse,
