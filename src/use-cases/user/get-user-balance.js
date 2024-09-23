@@ -15,6 +15,6 @@ export class GetUserBalanceUseCase {
       params.userId
     );
 
-    return balance[0];
+    return balance;
   }
 }
