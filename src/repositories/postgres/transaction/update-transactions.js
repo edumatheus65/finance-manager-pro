@@ -5,11 +5,10 @@ export class PostgresUpdateTransactionRepository {
     const updateFields = [];
     const updateValues = [];
 
-    Object.keys(updateTransactionParams),
-      forEach((key) => {
-        updateFields.push(`${key} = $${updateValues.length + 1}`);
-        updateFields.push(updateTransactionParams[key]);
-      });
+    Object.keys(updateTransactionParams).forEach((key, index) => {
+      updateFields.push(`${key} =$${index + 1}`);
+      updateValues.push(updateTransactionParams[key]);
+    });
 
     updateValues.push(transactionId);
 
