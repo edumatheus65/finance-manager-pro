@@ -1,3 +1,4 @@
+import { faker } from '@faker-js/faker';
 import { CreateUserController } from "./create-user.js"
 
 describe("Create User Controller", () => {
@@ -15,10 +16,12 @@ describe("Create User Controller", () => {
 
         const httpRequest = {
             body: {
-                first_name: "Edu",
-                last_name: "Doe",
-                email: "john.doe@example.com",
-                password: "password123"
+                first_name: faker.person.firstName(),
+                last_name: faker.person.lastName(),
+                email: faker.internet.email(),
+                password: faker.internet.password({
+                    length: 7
+                })
             }
         }
 
@@ -40,9 +43,11 @@ describe("Create User Controller", () => {
 
         const httpRequest = {
             body: {
-                last_name: "Doe",
-                email: "john.doe@example.com",
-                password: "password123"
+                last_name: faker.person.lastName(),
+                email: faker.internet.email(),
+                password: faker.internet.password({
+                    length: 7
+                })
             },
         }
 
@@ -59,9 +64,11 @@ describe("Create User Controller", () => {
 
         const httpRequest = {
             body: {
-                first_name: "Edu",
-                email: "john.doe@example.com",
-                password: "password123"
+                first_name: faker.person.firstName(),
+                email: faker.internet.email(),
+                password: faker.internet.password({
+                    length: 7
+                })
             }
         }
 
@@ -79,9 +86,11 @@ describe("Create User Controller", () => {
 
         const httpRequest = {
             body: {
-                first_name: "Edu",
-                last_name: "Doe",
-                password: "password123"
+                first_name: faker.person.firstName(),
+                last_name: faker.person.lastName(),
+                password: faker.internet.password({
+                    length: 7
+                })
             }
         }
 
@@ -99,10 +108,12 @@ describe("Create User Controller", () => {
 
         const httpRequest = {
             body: {
-                first_name: "Edu",
-                last_name: "Doe",
+                first_name: faker.person.firstName(),
+                last_name: faker.person.lastName(),
                 email: "invalid_email",
-                password: "password123"
+                password: faker.internet.password({
+                    length: 7
+                })
             }
         }
 
@@ -120,9 +131,9 @@ describe("Create User Controller", () => {
 
         const httpRequest = {
             body: {
-                first_name: "Edu",
-                last_name: "Doe",
-                email: "john.doe@example.com"               
+                first_name: faker.person.firstName(),
+                last_name: faker.person.lastName(),
+                email: faker.internet.email()               
             }
         }
 
@@ -139,10 +150,10 @@ describe("Create User Controller", () => {
 
         const httpRequest = {
             body: {
-                first_name: "Edu",
-                last_name: "Doe",
-                email: "john.doe@example.com",
-                password: "short"
+                first_name: faker.person.firstName(),
+                last_name: faker.person.lastName(),
+                email: faker.internet.email(),
+                password: faker.internet.password({ length: 3})
             }
         }
 
@@ -160,10 +171,12 @@ describe("Create User Controller", () => {
 
     const httpRequest = {
         body: {
-            first_name: "Edu",
-            last_name: "Matheus",
-            email: "john.doe@example.com",
-            password: "password123"
+            first_name: faker.person.firstName(),
+            last_name: faker.person.lastName(),
+            email: faker.internet.email(),
+            password: faker.internet.password({
+                    length: 7
+                })
         }
     }
 
