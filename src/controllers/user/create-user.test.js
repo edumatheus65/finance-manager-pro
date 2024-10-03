@@ -6,7 +6,7 @@ describe("Create User Controller", () => {
   // Esse stub é só uma class que vai retornar uma resposta pré definida pra gente para que a gente
   // possa testar nosso controller que é o que realmente a gente quer testar
   class CreateUserUseCaseStub {
-    execute(user) {
+    async execute(user) {
       return user;
     }
   }
@@ -108,9 +108,14 @@ describe("Create User Controller", () => {
 
   it("should returned 400 if password is less than 6 characters", async () => {
     const { sut } = makeSut();
-    
+
     // act
-    const result = await sut.execute({ body: {...httpRequest.body, password: faker.internet.password({ length: 3 })}});
+    const result = await sut.execute({
+      body: {
+        ...httpRequest.body,
+        password: faker.internet.password({ length: 3 }),
+      },
+    });
 
     // assert
     expect(result.statusCode).toBe(400);
@@ -131,10 +136,8 @@ describe("Create User Controller", () => {
 
   it("should retur 500 if CreateUserUseCase throws", async () => {
     //   arrange
-    const { createUserUseCase, sut } = makeSut();    
-    jest.spyOn(createUserUseCase, "execute").mockImplementationOnce(() => {
-      throw new Error();
-    });
+    const { createUserUseCase, sut } = makeSut();
+    jest.spyOn(createUserUseCase, "execute").mockRejectedValueOnce(new Error());
 
     // act
     const result = await sut.execute(httpRequest);
@@ -143,12 +146,12 @@ describe("Create User Controller", () => {
     expect(result.statusCode).toBe(500);
   });
 
-  it("should return 400 createUserUseCase throws EmailAlreadyInUseError error", async () => {
+  it("should return 500 createUserUseCase throws EmailAlreadyInUseError error", async () => {
     // arrange
     const { createUserUseCase, sut } = makeSut();
-    jest.spyOn(createUserUseCase, "execute").mockImplementationOnce(() => {
-      throw new EmailAlreadyInUseError(httpRequest.body.email);
-    });
+    jest
+      .spyOn(createUserUseCase, "execute")
+      .mockRejectedValue(new EmailAlreadyInUseError(httpRequest.body.email));
 
     // act
     const result = await sut.execute(httpRequest);

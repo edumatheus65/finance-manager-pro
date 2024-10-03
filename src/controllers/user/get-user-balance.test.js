@@ -42,4 +42,18 @@ describe("Get User Ballance Controller", () => {
 
     expect(httpResponse.statusCode).toBe(400);
   });
+
+  it("should return 500 if GetUserBalanceUseCase throws", async () => {
+    // arrange
+    const { getUserBallanceUseCase, sut } = makeSut();
+    jest
+      .spyOn(getUserBallanceUseCase, "execute")
+      .mockRejectedValueOnce(new Error());
+
+    // act
+    const httpResponse = await sut.execute(httpRequest);
+
+    // assert
+    expect(httpResponse.statusCode).toBe(500);
+  });
 });

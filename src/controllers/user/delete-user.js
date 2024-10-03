@@ -1,6 +1,7 @@
 import {
   checkIfIdValid,
   invalidIdResponse,
+  serverError,
   successfulRequest,
   userNotFoundResponse,
 } from "../helpers/index.js";
