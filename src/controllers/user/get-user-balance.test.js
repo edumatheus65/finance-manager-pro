@@ -31,4 +31,15 @@ describe("Get User Ballance Controller", () => {
     // assert
     expect(httpResponse.statusCode).toBe(200);
   });
+
+  it("should return 400 if user id is not valid", async () => {
+    // arrange
+    const { sut } = makeSut();
+
+    const httpResponse = await sut.execute({
+      params: { userId: "invalid_id" },
+    });
+
+    expect(httpResponse.statusCode).toBe(400);
+  });
 });
